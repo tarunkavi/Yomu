@@ -117,6 +117,11 @@ export function FindBar({
         <input
           ref={input}
           autoFocus
+          // A search term is not prose: no autocorrect bubble from macOS.
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck={false}
           value={query}
           onChange={(e) => search(e.target.value)}
           onKeyDown={(e) => {
